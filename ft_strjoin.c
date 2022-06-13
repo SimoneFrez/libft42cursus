@@ -6,7 +6,7 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 00:14:44 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/06/11 02:12:50 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 08:00:53 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *newstr;
-	int s1_len;
-	int s2_len;
+	char	*result;
+	size_t	s1_len;
+	size_t	s2_len;
+	size_t	result_len;
 
-	if (!(s1) && !(s2))
-		return (NULL);
-	else if (!(s1) || !(s2))
-		return(!(s1) ? ft_strdup(s2) : ft_strdup(s1));
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && s2)
+		return (ft_strdup(s2));
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	if (!(newstr = (char *)malloc(sizeof(char)* (s1_len + s2_len + 1))))
-		return (NULL);
-	ft_strlcpy(newstr, s1, s1_len + 1);
-	ft_strlcat(newstr + (s1_len), s2, s2_len + 1);
-	return (newstr);
+	result_len = s1_len + s2_len + 1;
+	result = malloc(result_len * sizeof(char));
+	if (!result)
+		return (0);
+	ft_memmove(result, s1, s1_len);
+	ft_memmove(result + s1_len, s2, s2_len);
+	result[result_len - 1] = '\0';
+	return (result);
 }

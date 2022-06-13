@@ -6,28 +6,32 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:48:40 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/05/26 11:06:11 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 10:23:15 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	a1;
-	size_t	a2;
+	size_t	j;
+	size_t	src_len;
+	size_t	dst_len;
 
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
 	i = 0;
-	a1 = ft_strlen(dst);
-	a2 = ft_strlen(src);
-	if (size - 1 <= a1)
-		return (a2 + size);
-	while (a1 + i < size - 1)
-	{
-		dst[a1 + i] = src[i];
-		i++;
-	}
-	dst[a1 + i] = '\0';
-	return (a1 + a2);
+	j = dst_len;
+	if (dstsize == 0)
+		return (src_len);
+	if (dstsize < dst_len)
+		return (src_len + dstsize);
+	while (src[i] && (dst_len + i) < dstsize)
+		dst[j++] = src[i++];
+	if ((dst_len + i) == dstsize && dst_len < dstsize)
+		dst[--j] = '\0';
+	else
+		dst[j] = '\0';
+	return (src_len + dst_len);
 }

@@ -6,15 +6,17 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:59:36 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/05/16 11:20:41 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 16:46:14 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	if(c >= 65  && c <= 90)
+	if (c >= 65 && c <= 90)
 	{
 		c = c + 32;
 	}
-		return(c);
+	return (c);
 }

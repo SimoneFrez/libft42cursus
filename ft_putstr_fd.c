@@ -6,7 +6,7 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 01:56:06 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/06/11 01:56:23 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 09:00:16 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	if (s != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 01:45:42 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/06/11 01:46:25 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 16:12:24 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (*s)
 		(*f)(i++, s++);

@@ -6,7 +6,7 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 23:33:21 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/06/11 00:12:02 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 09:39:03 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *substr;
+	char	*result;
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
-		return (ft_strdup(" "));
-	if (!(substr = (char *)malloc(sizeof(char) * (len + 1))))
+	if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s) - start >= len)
+		result = malloc(len + 1);
+	else
+		result = malloc(ft_strlen(s) - start + 1);
+	if (!result)
 		return (NULL);
-	ft_strlcpy(substr, s+start, len+1);
-	return (substr);
+	ft_strlcpy(result, s + start, len + 1);
+	return (result);
 }

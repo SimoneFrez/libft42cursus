@@ -6,7 +6,7 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 01:38:27 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/06/11 01:40:49 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 09:46:46 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*str;
 	unsigned int	i;
+	char			*result;
 
-	if (!s || !f || !(str = ft_strdup(s)))
-		return (0);
 	i = 0;
-	while (str[i])
+	if (!s || (!s && !f))
+		return (ft_strdup(""));
+	if (!f)
+		return (ft_strdup(s));
+	result = ft_strdup(s);
+	if (!result)
+		return (NULL);
+	while (s[i])
 	{
-		str[i] = f(i, str[i]);
+		result[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (str);
+	return (result);
 }

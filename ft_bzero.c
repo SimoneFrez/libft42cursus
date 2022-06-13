@@ -6,14 +6,13 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:45:33 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/05/17 11:09:59 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 06:51:33 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	ft_memset (s, 0, n);
 }
-

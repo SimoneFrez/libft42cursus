@@ -6,15 +6,14 @@
 /*   By: sgomes-d <sgomes-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 15:37:12 by sgomes-d          #+#    #+#             */
-/*   Updated: 2022/05/14 15:50:42 by sgomes-d         ###   ########.fr       */
+/*   Updated: 2022/06/12 11:10:32 by sgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if(c >= 32 && c <= 126)
-		return(1);
+	if (c >= 32 && c <= 126)
+		return (1);
 	else
-		return(0);
+		return (0);
 }
-
